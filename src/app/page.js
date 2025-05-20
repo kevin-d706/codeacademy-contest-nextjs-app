@@ -67,10 +67,10 @@ export default function DisplayPostsContainer() {
             />
           </Row>
           <Row>
-            <Col xs={3} md={2}>
+            <Col xs={5} md={2}>
               <SideBar categories={categories} selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
             </Col>
-            <Col xs={9} md={10}>
+            <Col xs={7} md={10}>
               <DisplayPosts
                 onReadPost={slug => router.push(`/post/${slug}`)}
                 filteredPosts={filteredPosts}
