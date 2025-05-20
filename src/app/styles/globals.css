@@ -1,0 +1,204 @@
+
+/* Modern readable theme: blue/gray for dark, soft white/blue for light, with clear text contrast */
+
+/* Cobalt Blue Theme: Brighter, more readable, and vibrant */
+body[data-theme="dark"] {
+  --bg-main: #22304a;
+  --text-main: #eaf6fb;
+  --text-secondary: #a3b1c6;
+  --card-bg: #263e6a;
+  --list-bg: #29487a;
+  --list-border: #355c9a;
+  --input-bg: #22304a;
+  --input-border: #355c9a;
+  --input-text: #eaf6fb;
+  --btn-bg: #357ded;
+  --btn-color: #fff;
+  --btn-hover-bg: #285bb5;
+  --navbar-bg: #22304a;
+  --navbar-link: #eaf6fb;
+  --card-shadow: 0 2px 12px 0 rgba(34,48,74,0.18);
+  --search-bg: #22304a;
+  --search-border: #355c9a;
+  --search-text: #eaf6fb;
+}
+body[data-theme="light"] {
+  --bg-main: #eaf6fb;
+  --text-main: #22304a;
+  --text-secondary: #355c9a;
+  --card-bg: #fff;
+  --list-bg: #f3f8fd;
+  --list-border: #b6c2d6;
+  --input-bg: #fff;
+  --input-border: #b6c2d6;
+  --input-text: #22304a;
+  --btn-bg: #357ded;
+  --btn-color: #fff;
+  --btn-hover-bg: #285bb5;
+  --navbar-bg: #eaf6fb;
+  --navbar-link: #22304a;
+  --card-shadow: 0 2px 8px 0 rgba(53,93,154,0.06);
+  --search-bg: #f3f8fd;
+  --search-border: #b6c2d6;
+  --search-text: #22304a;
+}
+
+html, body {
+  background: var(--bg-main);
+  color: var(--text-main);
+  min-height: 100vh;
+  transition: background 0.2s, color 0.2s;
+}
+
+main {
+  background: var(--bg-main);
+  color: var(--text-main);
+  min-height: 100vh;
+  padding-bottom: 2rem;
+}
+
+.card, .glass-card, .post-card, .comment-card {
+  background: var(--card-bg) !important;
+  color: var(--text-main) !important;
+  border-radius: 10px;
+  border: 1px solid var(--input-border);
+  box-shadow: var(--card-shadow);
+  transition: background 0.2s, color 0.2s;
+}
+
+ul, ol {
+  background: transparent;
+  padding-left: 1.2em;
+}
+
+li {
+  background: var(--list-bg);
+  color: var(--text-main);
+  border-bottom: 1px solid var(--list-border);
+  padding: 0.5em 0.8em;
+  border-radius: 6px;
+  margin-bottom: 0.5em;
+  transition: background 0.2s, color 0.2s;
+}
+
+/* Sidebar custom list styles for theme support */
+.sidebar-list-item {
+  background: var(--list-bg);
+  color: var(--text-main);
+  border-bottom: 1px solid var(--list-border);
+  padding: 0.5em 0.8em;
+  border-radius: 6px;
+  margin-bottom: 0.5em;
+  transition: background 0.2s, color 0.2s;
+}
+.sidebar-list-item.active, .sidebar-list-item:hover {
+  background: var(--btn-bg);
+  color: var(--btn-color);
+}
+
+.create-post input, .edit-post input, textarea, .search-bar, input[type="search"] {
+  background: var(--input-bg);
+  color: var(--input-text);
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
+  padding: 0.5rem;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+}
+.search-bar, input[type="search"] {
+  background: var(--search-bg);
+  color: var(--search-text);
+  border: 1.5px solid var(--search-border);
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+::placeholder {
+  color: var(--text-secondary);
+  opacity: 1;
+}
+
+.btn-theme {
+  background: var(--btn-bg);
+  color: var(--btn-color);
+  border: none;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-create {
+  background: linear-gradient(90deg, #357ded 0%, #38b6ff 100%);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px 0 rgba(53, 125, 237, 0.10);
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.btn-create:hover {
+  background: linear-gradient(90deg, #38b6ff 0%, #357ded 100%);
+  color: #fff;
+  box-shadow: 0 4px 16px 0 rgba(53, 125, 237, 0.18);
+}
+
+.btn-theme:hover {
+  background: var(--btn-hover-bg);
+  color: var(--btn-color);
+}
+
+header, .navbar, .navbar.bg-dark, .navbar.bg-light {
+  background: var(--navbar-bg) !important;
+}
+.navbar .nav-link, .navbar .navbar-brand {
+  color: var(--navbar-link) !important;
+}
+
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import "tailwindcss";
+
+
+
+.create-post {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 700px;
+    margin: 0 auto;
+}
+
+.create-post input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+textarea {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+}
+
+.edit-post {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 700px;
+    margin: 0 auto;
+}
+
+.edit-post input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn-success {
+    width: 120px;
+}
+
+.btn-back {
+    width: 100px;
+    text-align: center;
+}
