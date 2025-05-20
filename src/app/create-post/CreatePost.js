@@ -59,12 +59,12 @@ export function CreatePost({
         )}
         <button className='btn-success bg-green-500 text-white px-2 py-1 rounded hover:bg-green-700' onClick={onAddUser}>Add Post</button>
         <button className='btn-success bg-gray-200 text-black px-2 py-1 rounded hover:bg-gray-400' onClick={onBack}>🡠 Back</button>
-        <button
+        {/* <button
           onClick={onClear}
           className='ml-4 bg-red-500 text-white px-2 py-1 rounded hover:bg-red-700'
         >
           Clear Posts
-        </button>
+        </button> */}
       </div>
     </div>
   );
